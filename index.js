@@ -1,19 +1,34 @@
-submit.addEventListener('click', () => {
-  const input = document.getElementById('task').value;
-  console.log(task.value);
-  //追加をクリックしたらHTML ID"task"に入力されたものを'task'としてJSで取得
-  //取得成功したらログに出力
+const tasks = document.getElementById('tasks');
+const input = document.getElementById('submit');
+
+submit.addEventListener('click', function () {
+  // console.log(tasks.value);
+
+  const tasks = [
+    {
+      ID: '${index}',
+      comment: document.getElementById('tasks').value,
+      situation: '実行/削除ボタン',
+      //?IDが含まれていることになるのか
+    },
+  ];
 
   const p = document.createElement('p');
   output.appendChild(p);
-  p.innerHTML = task.value;
-
-  const text = document.getElementById('task');
+  tasks.forEach(
+    (tasks, index) =>
+      (p.innerHTML = `${index}  ${tasks.comment}  ${tasks.situation}`)
+  );
+  tasks.push(tasks.value);
+  //IDが0,1,2・・とならない
+  // ループできていないから？
+  const text = document.getElementById('tasks');
   text.value = '';
 });
 
 // まずやりたいこと
-
+//
+//=======================================================================
 // 入力されたタスクをオブジェクトで管理する？
 // →→入力された値を（①ID・②コメント・③状態）からなるオブジェクトを使って取得する
 // innerHTMLでID(No.)・コメント(タスクの内容)・状態ボタン(作業中デフォ)を出力

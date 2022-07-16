@@ -12,20 +12,27 @@
   </head>
   <body>
     <h1 class="text-4xl font-semibold font-serif">ToDoリスト</h1>
-    <div class="flex font-serif text-lg font-semibold pt-4">
-      <p class="px-1"><input type="radio" name="task" />すべて</p>
-      <p class="px-1"><input type="radio" name="task" />作業中</p>
-      <p class="px-1"><input type="radio" name="task" />完了</p>
-    </div>
-    <div class="flex text-xl font-extrabold font-serif">
-      <p class="px-1">ID</p>
-      <p class="px-1">コメント</p>
-      <p class="px-1">状態</p>
-    </div>
-    <p id="output"></p>
+    <table>
+      <div class="flex font-serif text-lg font-semibold pt-4">
+        <p class="px-1"><input type="radio" name="task" />すべて</p>
+        <p class="px-1"><input type="radio" name="task" />作業中</p>
+        <p class="px-1"><input type="radio" name="task" />完了</p>
+      </div>
+      <div class="flex text-xl font-extrabold font-serif">
+        <p class="px-1">ID</p>
+        <p class="px-1">コメント</p>
+        <p class="px-1">状態</p>
+      </div>
+      <p id="output"></p>
+    </table>
     <p class="text-2xl font-black font-serif pt-4">新規タスクの追加</p>
     <div class="pt-4">
-      <input type="text" id="task" class="border border-gray-500" name="task" />
+      <input
+        type="text"
+        id="tasks"
+        class="border border-gray-500"
+        name="tasks"
+      />
       <input type="submit" id="submit" value="追加" class="rounded" />
     </div>
 
